@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Edding
+  - Saw
+  - VomitPowder
   layers:
   - Default
   - TransparentFX
@@ -17,9 +20,9 @@ TagManager:
   - Queen
   - Guard
   - Item
-  - 
-  - 
-  - 
+  - Edding
+  - Saw
+  - Vomit-Powder
   - 
   - 
   - 
