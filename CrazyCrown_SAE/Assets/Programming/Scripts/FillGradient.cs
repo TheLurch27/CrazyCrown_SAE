@@ -56,6 +56,7 @@ public class FillGradient : MonoBehaviour
         image.gameObject.SetActive(true);
     }
 
+    // Methode zum Verstecken eines Bildes
     private void HideImage(Image image)
     {
         image.gameObject.SetActive(false);
