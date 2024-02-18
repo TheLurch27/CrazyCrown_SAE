@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
     public GameObject gameplayMenuUI;
     public GameObject creditsUI;
 
+    public string targetSceneName;
+
     private void Start()
     {
         // Beim Start wird nur das Hauptmenü angezeigt, während die anderen deaktiviert werden.
@@ -26,7 +28,7 @@ public class UIManager : MonoBehaviour
 
     public void StartGame()
     {
-        
+         SceneManager.LoadScene(targetSceneName);
     }
 
     public void ShowSettingsMenu()

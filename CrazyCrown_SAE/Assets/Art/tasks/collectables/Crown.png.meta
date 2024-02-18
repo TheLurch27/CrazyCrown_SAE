@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e7419d3a7fae67b4db8bd4651b53e211
+guid: 00d9125df7cd42b4fb3b3c8805dc4069
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -134,7 +134,49 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Crown_0
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 271
+        width: 884
+        height: 699
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6870b66b6d7dceb4d8a33fb144701d41
+      internalID: -692319243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crown_1
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 351
+        width: 757
+        height: 690
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c27059e6b833924689fd9b9b9c2136e
+      internalID: -874769806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +187,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Crown_0: -692319243
+      Crown_1: -874769806
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

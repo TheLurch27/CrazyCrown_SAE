@@ -7,9 +7,25 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     private Vector2 moveInput;
     private bool isSaluting = false;
+    private bool canMove = false;
+    private float startDelay = 10f; // Verzögerung in Sekunden, bevor der Spieler den Charakter bewegen kann
+    private bool gameStarted = false; // Überprüfung, ob das Spiel bereits gestartet wurde
+
+    private void Start()
+    {
+        // Überprüfe, ob das Spiel bereits gestartet wurde
+        if (!gameStarted)
+        {
+            StartGame();
+            gameStarted = true;
+        }
+    }
 
     private void Update()
     {
+        if (!canMove)
+            return;
+
         if (isSaluting)
         {
             if (!(Keyboard.current.downArrowKey.isPressed || Keyboard.current.sKey.isPressed))
@@ -50,5 +66,15 @@ public class PlayerController : MonoBehaviour
     {
         isSaluting = false;
         animator.SetBool("Saluting", false);
+    }
+
+    private void StartGame()
+    {
+        Invoke("EnableMovement", startDelay); // Starte eine Verzögerung, bevor der Spieler die Kontrolle übernehmen kann
+    }
+
+    private void EnableMovement()
+    {
+        canMove = true;
     }
 }

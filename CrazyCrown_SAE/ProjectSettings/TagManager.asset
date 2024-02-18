@@ -7,6 +7,13 @@ TagManager:
   - Edding
   - Saw
   - VomitPowder
+  - Life 2 (Gone)
+  - Life 3
+  - Life 1 (Gone)
+  - Life 3 (Gone)
+  - Life 2
+  - Life 1
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -23,8 +30,8 @@ TagManager:
   - Edding
   - Saw
   - Vomit-Powder
-  - 
-  - 
+  - Buttler
+  - Colectable
   - 
   - 
   - 
