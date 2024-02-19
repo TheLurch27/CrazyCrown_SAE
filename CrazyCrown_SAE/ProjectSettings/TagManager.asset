@@ -5,15 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Edding
-  - Saw
-  - VomitPowder
-  - Life 2 (Gone)
-  - Life 3
-  - Life 1 (Gone)
-  - Life 3 (Gone)
-  - Life 2
-  - Life 1
-  - Wall
+  - NPC
+  - Vomit-Powder
+  - Crown
+  - BK-Crown
+  - Portrait
+  - Portrait-Smear
+  - Cup
+  - Faberge-Egg
   layers:
   - Default
   - TransparentFX

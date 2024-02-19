@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 71540871364148b4f8f7dbfe6da3f4cd
+guid: dfa431978eacc104f9b3f97050673afb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Guard_0
+      name: Guard_interact_0
       rect:
         serializedVersion: 2
-        x: 26
-        y: 5
-        width: 307
-        height: 1204
+        x: 0
+        y: 0
+        width: 1068
+        height: 1206
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f6cee9cad9e98b44b106a8e8d719c3a
-      internalID: 1151671501
+      spriteID: 58fb2ae251bb85d4d87e8c15509dd682
+      internalID: -2057013328
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_1
+      name: Guard_interact_1
       rect:
         serializedVersion: 2
-        x: 464
-        y: 6
-        width: 310
-        height: 1203
+        x: 1113
+        y: 0
+        width: 983
+        height: 1206
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,8 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd6fc9e638e9c2a45b0043d213f4a512
-      internalID: 12071888
+      spriteID: 9a1e77405296939439c73649757af38d
+      internalID: 226944848
       vertices: []
       indices: 
       edges: []
@@ -188,8 +188,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Guard_0: 1151671501
-      Guard_1: 12071888
+      Guard_interact_0: -2057013328
+      Guard_interact_1: 226944848
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

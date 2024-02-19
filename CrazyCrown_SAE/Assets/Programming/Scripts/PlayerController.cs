@@ -1,19 +1,18 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public Animator animator;
+    public float pickupRadius = 1.5f; // Der Radius, in dem der Spieler das Item aufnehmen kann
     private Vector2 moveInput;
     private bool isSaluting = false;
     private bool canMove = false;
-    private float startDelay = 10f; // Verzögerung in Sekunden, bevor der Spieler den Charakter bewegen kann
-    private bool gameStarted = false; // Überprüfung, ob das Spiel bereits gestartet wurde
+    private float startDelay = 0f;
+    private bool gameStarted = false;
 
     private void Start()
     {
-        // Überprüfe, ob das Spiel bereits gestartet wurde
         if (!gameStarted)
         {
             StartGame();
@@ -28,7 +27,7 @@ public class PlayerController : MonoBehaviour
 
         if (isSaluting)
         {
-            if (!(Keyboard.current.downArrowKey.isPressed || Keyboard.current.sKey.isPressed))
+            if (!(Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)))
                 StopSaluting();
             else
                 return;
@@ -44,14 +43,14 @@ public class PlayerController : MonoBehaviour
         else if (moveDirection.x > 0)
             transform.localScale = new Vector3(1, 1, 1);
 
-        if (Keyboard.current.downArrowKey.isPressed || Keyboard.current.sKey.isPressed)
+        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
             StartSaluting();
     }
 
     private Vector2 GetMovementInput()
     {
-        float moveX = Keyboard.current.leftArrowKey.isPressed || Keyboard.current.aKey.isPressed ? -1f :
-                      Keyboard.current.rightArrowKey.isPressed || Keyboard.current.dKey.isPressed ? 1f : 0f;
+        float moveX = Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A) ? -1f :
+                      Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D) ? 1f : 0f;
 
         return new Vector2(moveX, 0f);
     }
@@ -59,22 +58,37 @@ public class PlayerController : MonoBehaviour
     private void StartSaluting()
     {
         isSaluting = true;
-        animator.SetBool("Saluting", true);
+        animator.SetBool("Salute", true);
     }
 
     private void StopSaluting()
     {
         isSaluting = false;
-        animator.SetBool("Saluting", false);
+        animator.SetBool("Salute", false);
     }
 
     private void StartGame()
     {
-        Invoke("EnableMovement", startDelay); // Starte eine Verzögerung, bevor der Spieler die Kontrolle übernehmen kann
+        Invoke("EnableMovement", startDelay);
     }
 
     private void EnableMovement()
     {
         canMove = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Item"))
+        {
+            float distance = Vector2.Distance(transform.position, other.transform.position);
+            if (distance <= pickupRadius)
+            {
+                // Führe hier die Aktionen aus, die bei der Kollision mit dem Item innerhalb des Radius ausgeführt werden sollen
+                Destroy(other.gameObject);
+
+                // Weitere Aktionen, wie das Erhöhen des Punktestands oder andere Spielmechaniken, könnten hier implementiert werden.
+            }
+        }
     }
 }

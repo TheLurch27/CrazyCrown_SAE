@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 71540871364148b4f8f7dbfe6da3f4cd
+guid: b680f110142897a4abe324e57ada8490
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,33 +136,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Guard_0
+      name: Guard.salute_0
       rect:
         serializedVersion: 2
         x: 26
-        y: 5
-        width: 307
-        height: 1204
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f6cee9cad9e98b44b106a8e8d719c3a
-      internalID: 1151671501
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Guard_1
-      rect:
-        serializedVersion: 2
-        x: 464
         y: 6
-        width: 310
+        width: 411
         height: 1203
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -171,8 +150,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd6fc9e638e9c2a45b0043d213f4a512
-      internalID: 12071888
+      spriteID: aeadd41acc03ce74db0e5ca9d2834236
+      internalID: 104000322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Guard.salute_1
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 6
+        width: 411
+        height: 1203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29e2043e8b02dab409393e1bef927968
+      internalID: -2129508852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Guard.salute_2
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 6
+        width: 411
+        height: 1203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6144722f536fcbe4f943399f880378ed
+      internalID: 1135565048
       vertices: []
       indices: 
       edges: []
@@ -188,8 +209,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Guard_0: 1151671501
-      Guard_1: 12071888
+      Guard.salute_0: 104000322
+      Guard.salute_1: -2129508852
+      Guard.salute_2: 1135565048
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

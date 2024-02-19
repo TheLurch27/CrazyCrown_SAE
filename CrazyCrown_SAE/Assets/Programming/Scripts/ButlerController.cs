@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class NPCController : MonoBehaviour
+public class ButlerController : MonoBehaviour
 {
     public Transform player; // Referenz auf den Spieler
     public float moveSpeed = 2f; // Bewegungsgeschwindigkeit des NPCs
@@ -12,7 +12,9 @@ public class NPCController : MonoBehaviour
     private Vector3 startPosition; // Startposition des NPCs
     private float waitTimer = 0f; // Timer für die Wartezeit beim Spieler
     private SpriteRenderer spriteRenderer; // Referenz auf den SpriteRenderer
-    private bool facingRight = true; // Flag, um die Richtung des NPCs zu verfolgen
+
+    // Variable, um den Zustand des Spielerbildes zu speichern
+    private bool playerImageStopped = false;
 
     void Start()
     {
@@ -24,8 +26,11 @@ public class NPCController : MonoBehaviour
     {
         if (!returning)
         {
-            // Bewegung zum Spieler
-            transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+            // Bewegung zum Spieler, nur wenn das Spielerbild nicht angehalten ist
+            if (!playerImageStopped)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+            }
 
             // Überprüfen, ob der NPC den Spieler erreicht hat
             if (Vector3.Distance(transform.position, player.position) <= distanceAhead)
@@ -37,14 +42,14 @@ public class NPCController : MonoBehaviour
                 returning = true;
             }
 
-            // Überprüfen und Anpassen der Richtung des NPCs
-            if (transform.position.x < player.position.x && !facingRight)
+            // Anpassen der Richtung des NPCs basierend auf seiner Bewegung
+            if (transform.position.x < player.position.x)
             {
-                Flip();
+                Flip(false); // Nach rechts schauen
             }
-            else if (transform.position.x > player.position.x && facingRight)
+            else
             {
-                Flip();
+                Flip(true); // Nach links schauen
             }
         }
         else
@@ -66,13 +71,28 @@ public class NPCController : MonoBehaviour
                     Destroy(gameObject);
                 }
             }
+
+            // Anpassen der Richtung des NPCs basierend auf seiner Rückkehr
+            if (transform.position.x < startPosition.x)
+            {
+                Flip(false); // Nach rechts schauen
+            }
+            else
+            {
+                Flip(true); // Nach links schauen
+            }
         }
     }
 
     // Methode zum Spiegeln des Bildes des NPCs
-    private void Flip()
+    private void Flip(bool facingLeft)
     {
-        facingRight = !facingRight;
-        transform.Rotate(0f, 180f, 0f);
+        spriteRenderer.flipX = facingLeft;
+    }
+
+    // Methode, um den Zustand des Spielerbildes zu aktualisieren
+    public void SetPlayerImageStopped(bool stopped)
+    {
+        playerImageStopped = stopped;
     }
 }
